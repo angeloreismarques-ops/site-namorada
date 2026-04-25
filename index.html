@@ -8,6 +8,7 @@
     body {
       margin: 0;
       height: 100vh;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -15,7 +16,6 @@
       font-family: Arial;
 
       background: linear-gradient(135deg, #ff758c, #ff7eb3);
-      overflow: hidden;
     }
 
     h1 {
@@ -84,29 +84,42 @@
 
 <body>
 
-  <h1>💖 Você me ama? 💖</h1>
+  <h1>💖 bom diazinho momo, hoje tem pepeta? 💖</h1>
 
   <div class="botoes">
     <button id="sim" onclick="clicouSim()">Sim 😍</button>
-    <button id="nao" onmouseover="fugir()">Não 😢</button>
+
+    <button id="nao"
+      onmouseenter="fugir()"
+      ontouchstart="fugir()"
+      onclick="fugir()">
+      Não 😢
+    </button>
   </div>
 
   <div class="coracoes" id="coracoes"></div>
 
   <script>
     function clicouSim() {
-      window.location.href = "https://wa.me/5598999999999?text=Sim, eu te amo ❤️";
+      window.location.href = "https://wa.me/5598981584080?text=sim momo hoje tem pepetaa❤️";
     }
 
     function fugir() {
       let btn = document.getElementById("nao");
 
-      let x = Math.random() * (window.innerWidth - btn.offsetWidth);
-      let y = Math.random() * (window.innerHeight - btn.offsetHeight);
+      let largura = window.innerWidth - btn.offsetWidth;
+      let altura = window.innerHeight - btn.offsetHeight;
 
+      let x = Math.random() * largura;
+      let y = Math.random() * altura;
+
+      btn.style.position = "absolute";
       btn.style.left = x + "px";
       btn.style.top = y + "px";
+
       btn.innerText = "não 😭";
+
+      navigator.vibrate?.(80);
     }
 
     // corações caindo
@@ -125,7 +138,7 @@
       }, 6000);
     }
 
-    setInterval(criarCoracao, 300);
+    setInterval(criarCoracao, 250);
   </script>
 
 </body>
