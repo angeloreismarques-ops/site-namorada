@@ -21,9 +21,10 @@
     h1 {
       color: white;
       text-align: center;
-      font-size: 32px;
+      font-size: clamp(32px, 5vw, 56px);
       text-shadow: 0 0 10px rgba(0,0,0,0.4);
       animation: flutuar 2s infinite ease-in-out;
+      padding: 0 20px;
     }
 
     @keyframes flutuar {
@@ -36,13 +37,14 @@
     }
 
     button {
-      padding: 15px 25px;
-      font-size: 18px;
-      margin: 10px;
+      padding: 20px 40px;
+      font-size: 26px;
+      margin: 15px;
       border: none;
-      border-radius: 12px;
+      border-radius: 15px;
       cursor: pointer;
       transition: 0.2s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     }
 
     #sim {
@@ -101,7 +103,7 @@
 
   <script>
     function clicouSim() {
-      window.location.href = "https://wa.me/5598981584080?text=sim momo hoje tem pepetaa❤️";
+      window.location.href = "https://wa.me/5598981584080?text=sim momo hoje tem pepetaaa";
     }
 
     function fugir() {
